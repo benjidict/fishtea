@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="gallery.css">
+    <style>
+        #randomText {
+            font-weight: bold;
+            color: #ff5733;
+        }
+    </style>
+</head>
+<body>
+   <h2>Gallery with Details and Summary</h2>
+   <nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="content.html">hakdog</a></li>
+    </ul>
+</nav>
+<details>
+    <summary>Natures Wonder in the Philippines</summary>
+    <p>This is Mt. Apo, the Largest Mountain in the Philippines</p>
+    <img src="mt apo.webp" alt="Mt. Apo">
+    <div></div>
+    <p>This is the Sierra Madre Mountain Range or Nature's Barrier</p>
+    <img src="sierramadre.jpg" alt="Sierra Madre">
+</details>
+
+<details>
+    <summary>The Safest City In The Philippines</summary>
+    <p><b>Davao City</b> is the safest city in the Philippines due to its low crime rate, strict city government rules, and the discipline of its people.</p>
+    <img src="davao.jpg" alt="Davao City">
+</details>
+
+<details>
+    <summary>Me</summary>
+    <p>Hi! This is me, I'm just an IT student who loves coding with HTML.</p>
+</details>
+
+<details>
+    <summary>Others</summary>
+    <p>Mao Rato BWAHAHHAAHHAAH</p>
+</details>
+
+<button onclick="showDateTime()">Show Date and Time</button>
+<p id="datetime"></p>
+
+<button onclick="generateRandomText()">Generate Random Text</button>
+<p id="randomText"></p>
+
+<script>
+    function showDateTime() {
+        const currentDate = new Date();
+        const formattedDate = currentDate.toLocaleString(); 
+        document.getElementById("datetime").innerText = "Current Date and Time: " + formattedDate;
+    }
+
+    function generateRandomText() {
+        const texts = [
+            "Created by Laurence Benjidict.",
+            "Huiee Arly Naa Lagi Ka.",
+            "Hi Mira!",
+            "Pag Sure Ouyy!",
+            "Caleb is better than me in coding.",
+            "Lauben Lauben Lang!",
+            "Dahil Diyan May Singko Ka Sa Akin."
+        ];
+        const randomIndex = Math.floor(Math.random() * texts.length);
+        document.getElementById("randomText").innerHTML = `<span style='color: ${getRandomColor()};'>${texts[randomIndex]}</span>`;
+    }
+
+    function getRandomColor() {
+        const colors = ["#ff5733", "#33ff57", "#3357ff", "#f4a261", "#e63946"];
+        return colors[Math.floor(Math.random() * colors.length)];
+    }
+</script>
+</body>
+</html>
